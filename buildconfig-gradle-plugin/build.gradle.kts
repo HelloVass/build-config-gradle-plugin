@@ -1,7 +1,7 @@
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
-    maven
+    `maven-publish`
 }
 
 group = "info.hellovass.buildconfig_gradle_plugin"
@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
     implementation("com.squareup:kotlinpoet:1.10.1") {
         exclude(group = "org.jetbrains.kotlin")
     }
