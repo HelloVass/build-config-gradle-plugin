@@ -29,3 +29,45 @@ gradlePlugin {
         }
     }
 }
+
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.get().allSource)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            pom {
+                name.set("buildconfig-gradle-plugin")
+                description.set("buildconfig-gradle-plugin is a version plugin")
+                url.set("https://github.com/HelloVass/build-config-gradle-plugin")
+                properties.set(
+                    mapOf(
+                        "author" to "HelloVass"
+                    )
+                )
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("HelloVass")
+                        name.set("HelloVass")
+                        email.set("hellova33@gmail.com")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/HelloVass/build-config-gradle-plugin.git")
+                    developerConnection.set("scm:git:ssh://github.com/HelloVass/build-config-gradle-plugin.git")
+                    url.set("https://github.com/HelloVass/build-config-gradle-plugin")
+                }
+                from(components["java"])
+                artifact(sourcesJar.get())
+            }
+        }
+    }
+}
