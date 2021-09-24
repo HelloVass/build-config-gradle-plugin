@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "info.hellovass.buildconfig_gradle_plugin"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     google()
