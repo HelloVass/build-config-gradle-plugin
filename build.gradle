@@ -7,7 +7,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31"
-        classpath "com.github.HelloVass.build-config-gradle-plugin:buildconfig-gradle-plugin:v1.0.1"
+        classpath "com.github.HelloVass.build-config-gradle-plugin:buildconfig-gradle-plugin:v1.0.2"
     }
 }
 
